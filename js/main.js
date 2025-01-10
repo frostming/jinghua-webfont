@@ -19,7 +19,7 @@ const state = {
     localStorage.setItem('styles', this.styles.join(','));
   },
 
-  updateStyle() {
+  updateStyle(init = false) {
     const el = document.querySelector('#textInput');
     el.style.fontFeatureSettings = this.styles.map(style => `'${style}'`).join(', ');
     const code = document.querySelector('#cssCode code');
@@ -28,7 +28,12 @@ const state = {
   src: url(https://frostming.github.io/jinghua-webfont/css/京華老宋体v2.002.ttf) format('truetype');
   ${this.styles.length > 0 ? `font-feature-settings: ${el.style.fontFeatureSettings};` : ''}
 }`;
+    if (init) {
+      this.styles.forEach(style => {
+        document.querySelector(`.style-btn[data-style="${style}"]`).classList.add('active');
+      });
+    }
   }
 }
 
-state.updateStyle();
+state.updateStyle(true);
