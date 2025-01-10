@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Jinghua';
+  src: url(./京華老宋体v2.002.ttf) format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 1076px;
+  margin: 0 auto;
+}
+
+html {
+  font-size: 18px;
+  font-family: 'Jinghua', serif;
+}
+
+.container {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.left {
+  flex-grow: 1;
+}
+
+.right {
+  max-width: 50%;
+}
+
+#textInput {
+  width: 100%;
+  font-family: inherit;
+  font-size: 30px;
+  padding: 0.5em;
+  line-height: 1.6;
+  height: auto;
+  resize: vertical;
+  min-height: 600px;
+  border: 2px solid black;
+}
+
+#textInput:focus {
+  height: auto;
+}
+
+.style-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.style-btn {
+  background-color: white;
+  font-family: inherit;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 0px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.style-btn.active {
+  background-color: black;
+  color: white;
+}
+
+.ss01 {
+  font-feature-settings: 'ss01';
+}
+
+.ss02 {
+  font-feature-settings: 'ss02';
+}
+
+.ss03 {
+  font-feature-settings: 'ss03';
+}
+
+.ss04 {
+  font-feature-settings: 'ss04';
+}
+
+.ss05 {
+  font-feature-settings: 'ss05';
+}
+
+.ss06 {
+  font-feature-settings: 'ss06';
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#cssCode {
+  position: relative;
+  border: 2px solid black;
+}
+
+#cssCode pre {
+  margin: 0;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+#cssCode button {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: transparent;
+  border: 2px solid black;
+  cursor: pointer;
+}
