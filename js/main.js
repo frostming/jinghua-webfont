@@ -4,6 +4,10 @@ document.querySelectorAll('.style-btn').forEach(btn => btn.addEventListener('cli
   state.setStyle(Array.from(document.querySelectorAll('.style-btn.active')).map(btn => btn.dataset.style));
 }));
 
+document.querySelector('#textInput').addEventListener('input', function(e) {
+  localStorage.setItem('text', e.target.value);
+});
+
 document.querySelector('#cssCode button').addEventListener('click', function(e) {
   e.preventDefault();
   const code = document.querySelector('#cssCode code');
@@ -34,6 +38,12 @@ const state = {
       });
     }
   }
-}
+};
 
-state.updateStyle(true);
+(function () {
+  state.updateStyle(true);
+  const text = localStorage.getItem('text');
+  if (text) {
+    document.querySelector('#textInput').value = text;
+  }
+})();
